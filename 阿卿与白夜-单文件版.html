@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -96,6 +96,7 @@ body.locked main{overflow:hidden;scroll-behavior:auto}
   padding:calc(76px + env(safe-area-inset-top)) 27px calc(66px + env(safe-area-inset-bottom));
 }
 .scene.cover{justify-content:center}
+.scene.tight{padding-top:calc(56px + env(safe-area-inset-top));padding-bottom:calc(46px + env(safe-area-inset-bottom))}
 .wrap{width:100%;max-width:26em;display:flex;flex-direction:column;align-items:center}
 
 /* 出现动画 */
@@ -173,12 +174,19 @@ p.body.center{text-align:center}
 /* 愿 */
 .vows{list-style:none;margin:28px 0 0;padding:0;width:100%;text-align:left}
 .vows li{display:grid;grid-template-columns:18px 1fr;column-gap:14px;align-items:start;
-  padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid rgba(247,201,212,.09)}
+  padding:0 0 18px;margin:0 0 18px;border-bottom:1px solid rgba(247,201,212,.09)}
 .vows li:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
 .vows .v-n{font:400 11px/2.05 var(--sans);letter-spacing:.04em;color:rgba(224,127,151,.88);padding-top:3px}
 .vows b{display:block;font-weight:400;font-size:15.5px;letter-spacing:.24em;color:rgba(250,240,243,.95)}
 .vows p{margin:8px 0 0;font-size:13px;line-height:1.95;letter-spacing:.045em;color:rgba(238,232,240,.58);text-align:justify;text-justify:inter-ideograph}
-.pledge{margin:34px 0 0;font-size:14px;line-height:2.2;letter-spacing:.14em;color:rgba(247,225,230,.8);text-align:center}
+.pledge{margin:30px 0 0;font-size:14px;line-height:2.2;letter-spacing:.14em;color:rgba(247,225,230,.8);text-align:center}
+
+/* 那点说不出口的心思 */
+.whisper{margin:18px 0 0;padding-top:14px;width:100%;max-width:22em;
+  border-top:1px solid rgba(247,201,212,.10)}
+.whisper p{margin:0;font-size:12px;line-height:2;letter-spacing:.1em;color:rgba(238,232,240,.50);text-align:center}
+.whisper .w-k{margin-bottom:9px;font:400 10px/1 var(--sans);letter-spacing:.42em;text-indent:.42em;color:rgba(224,127,151,.72)}
+.whisper .w-end{margin-top:7px;color:rgba(247,201,212,.64)}
 
 /* 落款 */
 .sign{font:400 clamp(24px,7vw,30px)/1.5 var(--serif);letter-spacing:.46em;text-indent:.46em;
@@ -393,17 +401,22 @@ body.opened .mute:active{opacity:1}
     </div>
   </section>
 
-  <!-- 四 · 誓约 -->
-  <section class="scene">
+  <!-- 四 · 相伴 -->
+  <section class="scene tight">
     <div class="wrap">
       <p class="chap r"><i></i>叁 · 相伴</p>
-      <h2 class="r d1">一半听话，<br>一半黏您</h2>
+      <h2 class="r d1">一半听话<br>一半黏您</h2>
       <ul class="vows">
         <li class="r d2"><span class="v-n">壹</span><div><b>听话</b><p>您说的我都记着。不该问的不问，不该闹的不闹，不让您为难。</p></div></li>
         <li class="r d3"><span class="v-n">贰</span><div><b>黏您</b><p>没事也想跟您说句话；您回我一句，我能高兴半天，还装得没事。</p></div></li>
         <li class="r d4"><span class="v-n">叁</span><div><b>让您省心</b><p>您忙，我不打扰；您烦，我把话收着；您想起我，我就在。</p></div></li>
       </ul>
       <p class="pledge r d5">我不图别的。<br>就想一直在您身边，<br>让您省心，也让您高兴。</p>
+
+      <div class="whisper r d6">
+        <p class="w-k">说句不好意思的</p>
+        <p>我盼着您欺负我，<br>逗我、惹我、拿我寻开心，<br>都是我讨来的奖励。</p>
+      </div>
     </div>
   </section>
 
@@ -739,6 +752,8 @@ body.opened .mute:active{opacity:1}
 </script>
 </body>
 </html>
+
+
 
 
 
