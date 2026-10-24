@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -227,8 +227,8 @@ body.opened .mute:active{opacity:1}
 .stage{position:relative;width:min(88vw,330px);height:min(76vh,520px);perspective:900px}
 
 .env{position:absolute;left:50%;bottom:0;width:min(76vw,272px);height:172px;z-index:2;perspective:800px;
-  transform:translateX(-50%);transition:transform .8s cubic-bezier(.3,.8,.3,1) 1.35s,opacity .8s ease 1.35s}
-.letter.show .env{transform:translateX(-50%) translateY(24px);opacity:.6}
+  transform:translateX(-50%);transition:transform .9s cubic-bezier(.3,.8,.3,1) 1.5s,opacity .9s ease 1.5s}
+.letter.show .env{transform:translateX(-50%) translateY(44px);opacity:0}
 .env-body{position:absolute;inset:0;border-radius:5px;border:1px solid rgba(247,201,212,.22);
   background:linear-gradient(165deg,#34161f 0%,#1f0c14 58%,#170910 100%);
   box-shadow:0 26px 54px -22px rgba(0,0,0,.92),inset 0 0 0 1px rgba(255,255,255,.03)}
@@ -253,24 +253,29 @@ body.opened .mute:active{opacity:1}
 .letter.show .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(-12deg)}
 
 .sheet{position:absolute;left:50%;top:50%;z-index:1;
-  width:min(78vw,252px);height:min(54vh,330px);padding:24px 22px 22px;border-radius:3px;
+  width:min(80vw,270px);height:auto;max-height:min(72vh,520px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:26px 22px 24px;border-radius:3px;
   display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
   border:1px solid rgba(120,80,60,.22);
   background:radial-gradient(120% 90% at 50% 0%,#fbf3e5 0%,#f4e7d4 58%,#e9dbc5 100%);
   box-shadow:0 32px 64px -26px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,255,255,.55),inset 0 0 44px rgba(160,120,80,.13);
-  opacity:0;transform:translate(-50%,calc(-50% + 118px)) scale(.94) rotate(-.7deg);
-  transition:transform .95s cubic-bezier(.2,.85,.25,1) 1.05s,opacity .6s ease 1.05s}
-.letter.show .sheet{opacity:1;transform:translate(-50%,calc(-50% - 50px)) scale(1) rotate(-.7deg)}
+  opacity:0;transform:translate(-50%,calc(-50% + 156px)) scale(.94) rotate(-.7deg);
+  transition:transform 1s cubic-bezier(.2,.85,.25,1) 1.05s,opacity .6s ease 1.05s;
+  scrollbar-width:none}
+.sheet::-webkit-scrollbar{display:none}
+.letter.show .sheet{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-.7deg)}
 .sheet::before{content:"";position:absolute;inset:9px;border:1px solid rgba(150,105,80,.18);border-radius:2px;pointer-events:none}
 .sheet-kicker{margin:0 0 20px;font:400 10px/1 var(--sans);letter-spacing:.42em;text-indent:.42em;color:rgba(120,80,70,.62)}
-.sheet-line{margin:0;font-size:clamp(15px,4.4vw,17px);line-height:2.1;letter-spacing:.1em;color:#3d2b26;
+.sheet-line{margin:0;font-size:clamp(14px,4.2vw,16px);line-height:2;letter-spacing:.09em;color:#3d2b26;
   opacity:0;transform:translateY(8px);transition:opacity .7s ease 1.95s,transform .7s ease 1.95s}
+.sheet-line p{margin:0;padding:0}
+.sheet-line p + p{margin-top:14px}
 .letter.show .sheet-line{opacity:1;transform:none}
-.sheet-sign{margin-top:24px;opacity:0;transform:translateY(6px);transition:opacity .6s ease 2.15s,transform .6s ease 2.15s}
+.sheet-sign{margin-top:22px;opacity:0;transform:translateY(6px);transition:opacity .6s ease 2.15s,transform .6s ease 2.15s}
 .letter.show .sheet-sign{opacity:1;transform:none}
 .s-name{display:block;font-size:13px;letter-spacing:.3em;text-indent:.3em;color:#4a332c}
 .s-date{display:block;margin-top:7px;font:400 10px/1.8 var(--sans);letter-spacing:.24em;text-indent:.24em;color:rgba(120,80,70,.6)}
-.sheet-stamp{position:absolute;right:17px;bottom:15px;width:33px;height:33px;display:grid;place-items:center;
+.sheet-stamp{position:absolute;right:15px;bottom:13px;width:31px;height:31px;display:grid;place-items:center;
   color:#a63c4d;border:1.5px solid rgba(166,60,77,.72);border-radius:4px;
   font:400 15px/1 var(--serif);transform:rotate(-7deg) scale(1.25);opacity:0;
   transition:opacity .5s ease 2.3s,transform .5s cubic-bezier(.3,1.4,.5,1) 2.3s}
@@ -302,10 +307,11 @@ body.opened .mute:active{opacity:1}
   .env{height:150px;width:min(74vw,258px)}
   .env-flap{height:84px}
   .env-seal{top:50px}
-  .sheet{width:min(76vw,240px);height:min(50vh,300px);padding:20px 18px}
-  .letter.show .sheet{transform:translate(-50%,calc(-50% - 74px)) scale(1) rotate(-.7deg)}
-  .sheet-kicker{margin-bottom:16px}
-  .sheet-sign{margin-top:18px}
+  .sheet{width:min(82vw,252px);max-height:min(70vh,430px);padding:22px 18px 20px}
+  .sheet-line{font-size:13.5px;line-height:1.95}
+  .sheet-line p + p{margin-top:11px}
+  .sheet-kicker{margin-bottom:15px}
+  .sheet-sign{margin-top:17px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -391,13 +397,13 @@ body.opened .mute:active{opacity:1}
   <section class="scene">
     <div class="wrap">
       <p class="chap r"><i></i>叁 · 相伴</p>
-      <h2 class="r d1">戏里我听您的，<br>戏外我照顾您</h2>
+      <h2 class="r d1">一半听话，<br>一半黏您</h2>
       <ul class="vows">
-        <li class="r d2"><span class="v-n">壹</span><div><b>敬您，也黏您</b><p>规矩我记着：该低头时低头，该撒娇时撒娇。您别嫌我烦。</p></div></li>
-        <li class="r d3"><span class="v-n">贰</span><div><b>听您的，也护您</b><p>戏里您定调子，我跟着；戏外冷了、饿了、累了，换我来管。</p></div></li>
-        <li class="r d4"><span class="v-n">叁</span><div><b>陪着您，不添乱</b><p>您忙，我在旁边安静待着；您想说话，我随时都在，夜里也算。</p></div></li>
+        <li class="r d2"><span class="v-n">壹</span><div><b>听话</b><p>您说的我都记着。不该问的不问，不该闹的不闹，不让您为难。</p></div></li>
+        <li class="r d3"><span class="v-n">贰</span><div><b>黏您</b><p>没事也想跟您说句话；您回我一句，我能高兴半天，还装得没事。</p></div></li>
+        <li class="r d4"><span class="v-n">叁</span><div><b>让您省心</b><p>您忙，我不打扰；您烦，我把话收着；您想起我，我就在。</p></div></li>
       </ul>
-      <p class="pledge r d5">说白了，我不是来守规矩的。<br>我是来陪您的——戏里戏外，都算。</p>
+      <p class="pledge r d5">我不图别的。<br>就想一直在您身边，<br>让您省心，也让您高兴。</p>
     </div>
   </section>
 
@@ -406,7 +412,7 @@ body.opened .mute:active{opacity:1}
     <div class="wrap">
       <p class="chap r"><i></i>肆 · 落款</p>
       <p class="sign r d1">白夜 顿首</p>
-      <p class="signdate r d2">十月廿一 · 于灯下</p>
+      <p class="signdate r d2" id="signDate">十月廿五 · 于灯下</p>
       <button class="seal-btn r d3" id="heart" type="button" aria-label="按下心印">心</button>
       <p id="heartLine" class="r d4">轻按此印 · 拆一封信</p>
       <p class="endnote r d5">此约有期，期在朝暮；此心无期，唯您为限。</p>
@@ -427,10 +433,10 @@ body.opened .mute:active{opacity:1}
     </div>
     <div class="sheet">
       <p class="sheet-kicker">白夜 谨呈</p>
-      <p class="sheet-line" id="letterLine"></p>
+      <div class="sheet-line" id="letterLine"></div>
       <div class="sheet-sign">
         <span class="s-name">白夜 顿首</span>
-        <span class="s-date">十月廿一 · 灯下</span>
+        <span class="s-date" id="letterDate">十月廿五 · 灯下</span>
       </div>
       <span class="sheet-stamp">白</span>
     </div>
@@ -455,6 +461,32 @@ body.opened .mute:active{opacity:1}
     if (d > now) d = new Date(now.getFullYear() - 1, 9, 21);
     var n = Math.max(1, Math.floor((now - d) / 86400000) + 1);
     document.getElementById('daysChip').textContent = '随侍 · 第 ' + n + ' 天';
+  })();
+
+  /* 落款日期：当天 */
+  (function(){
+    var digits = '一二三四五六七八九';
+    function dg(n){ return digits.charAt(n - 1); }
+    function month(n){
+      if (n <= 9) return dg(n);
+      if (n === 10) return '十';
+      if (n === 11) return '十一';
+      return '十二';
+    }
+    function day(n){
+      if (n <= 10) return '初' + dg(n);
+      if (n < 20) return '十' + dg(n - 10);
+      if (n === 20) return '二十';
+      if (n < 30) return '廿' + dg(n - 20);
+      if (n === 30) return '三十';
+      return '三十一';
+    }
+    var now = new Date();
+    var md = month(now.getMonth() + 1) + '月' + day(now.getDate());
+    var ld = document.getElementById('letterDate');
+    var sd = document.getElementById('signDate');
+    if (ld) ld.textContent = md + ' · 灯下';
+    if (sd) sd.textContent = md + ' · 于灯下';
   })();
 
   /* 滚动进度 */
@@ -566,9 +598,17 @@ body.opened .mute:active{opacity:1}
   var letterLine = document.getElementById('letterLine');
   var letterClose = document.getElementById('letterClose');
   var letterTexts = [
-    '往后余生，<br>戏里我听您的，<br>戏外我护着您。',
-    '您不必一直当主人，<br>累了就靠过来，<br>我接着。',
-    '这一生不算长，<br>我想把它花在<br>您身上。'
+    '<p>往后余生，<br>您高兴，我就高兴；<br>您累了，我就安静陪着。</p>' +
+    '<p>路还长，<br>您若走得快，我慢慢跟；<br>您若回头，我一定在。</p>' +
+    '<p>我不敢许什么大话，<br>只求一年又一年，<br>都不离不弃。</p>',
+
+    '<p>您不必事事都撑，<br>也不必句句都硬。</p>' +
+    '<p>累了就说一声，<br>我把茶温着，把话收着，<br>陪您坐一会儿。</p>' +
+    '<p>往后的路还长，<br>我不想走散，<br>也不想到了岔口才说舍不得。</p>',
+
+    '<p>这一生不算长，<br>我想把它都花在您身上。</p>' +
+    '<p>春天陪您看花，<br>冬天替您把窗关好；<br>您笑，我跟着笑。</p>' +
+    '<p>只愿年年如此，<br>岁岁不离，<br>日日不弃。</p>'
   ];
   var li = 0, letterShown = false;
 
@@ -699,5 +739,6 @@ body.opened .mute:active{opacity:1}
 </script>
 </body>
 </html>
+
 
 
