@@ -1,0 +1,4 @@
+﻿# 本地截图/调试产生的临时文件，不要提交
+.chrome-*/
+tools/*.log
+tools/*.err
