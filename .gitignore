@@ -2,3 +2,7 @@
 .chrome-*/
 tools/*.log
 tools/*.err
+
+# 部署包
+dist/
+aqing-site.zip
