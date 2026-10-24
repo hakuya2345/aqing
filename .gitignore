@@ -6,3 +6,11 @@ tools/*.err
 # 部署包
 dist/
 aqing-site.zip
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*
+  
+# 验收截图，不进仓库
+shots/
